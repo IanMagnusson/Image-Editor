@@ -1,0 +1,124 @@
+
+// empty lines will be ignored.
+
+// comment style lines will be ignored as well.
+
+// INSTRUCTION
+
+// load [fileName] --> an image must be loaded before any other commands can be processed.
+// All commands will be executed upon the last loaded image until a new image is loaded.
+
+// save [fileName] --> an image needs to be saved in order to be viewed.
+// *.png image type is recommanded.
+
+// [ImageEffect] [Parameter (Optional)]--> an ImageEffect can be "blur", "sharpen", "greyscale", "sepia", "dither", and "mosaic".
+// [mosaic] requires a second parameter [numOfSeeds] (an integer between 1 ~ 15000) separated by a single space.
+// !!BEWARE!! RUNNING MOSAIC WITH A LARGE SEED (> 10000) WILL LIKELY TAKE MORE THAN 30 SEC!
+
+load fluffy.jpg
+blur
+save fluffyBlur.jpg
+blur
+save fluffyBlurBlur.jpg
+
+load jackPic.jpg
+blur
+save jackPicBlur.jpg
+blur
+save jackPicBlurBlur.jpg
+
+load fluffy.jpg
+sharpen
+save fluffySharp.jpg
+sharpen
+save fluffySharpSharp.jpg
+
+load jackPic.jpg
+sharpen
+save jackPicSharp.jpg
+sharpen
+save jackPicSharpSharp.jpg
+
+load fluffy.jpg
+sepia
+save fluffySepia.jpg
+
+load jackPic.jpg
+sepia
+save jackPicSepia.jpg
+
+load jackPic.jpg
+greyscale
+save jackPicGrey.jpg
+
+load fluffy.jpg
+greyscale
+save fluffyGrey.jpg
+
+load rainbow 430 100 false
+save RainbowVertical.png
+
+load rainbow 700 500 true
+save RainbowHorizontal.png
+
+load checkerboard 10
+save Checkerboard.png
+
+load jackPic.jpg
+dither
+save jackPicDither.jpg
+
+load fluffy.jpg
+dither
+save fluffyDither.jpg
+
+load fluffy.jpg
+mosaic 1000
+save fluffyMosaic1000.jpg
+
+load jackPic.jpg
+mosaic 1000
+save jackPicMosaic1000.jpg
+
+load manhattan.png
+blur
+save manhattan-blur.png
+sepia
+save manhattan-blur-sepia.png
+
+load manhattan.png
+sharpen
+save manhattan-sharpen.png
+sharpen
+save manhattan-sharpen-sharpen.png
+
+load manhattan.png
+greyscale
+save manhattan-greyscale.png
+
+load manhattan.png
+sepia
+save manhattan-sepia.png
+
+load manhattan.png
+dither
+save manhattan-dither.png
+
+// mosaic with larger seeds and/or larger image will take much more time to process.
+// the following four mosaic takes about 30~45 sec.
+
+load manhattan.png
+mosaic 1000
+save manhattan-mosaic-1000.png
+
+load manhattan.png
+mosaic 4000
+save manhattan-mosaic-4000.png
+
+load manhattan.png
+mosaic 8000
+save manhattan-mosaic-8000.png
+
+load manhattan.png
+mosaic 15000
+save manhattan-mosaic-15000.png
