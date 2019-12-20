@@ -7,7 +7,7 @@ This is a fully operational image editor with a Model View Control (MVC) design 
 We have implemented all the required specifications of the assignment and also implemented the undo/redo extra credit.
 
 ## How to use this
-Run our .jar file with this commands
+Run our .jar file with these commands
 ```
 # to access interactive GUI
 java -jar ImageEditor.jar -interactive
@@ -16,7 +16,7 @@ java -jar ImageEditor.jar -interactive
 java -jar ImageEditor.jar -script path-of-script-file
 ```
 ### Interactive Mode
-Before running any other command you must *load* or *create* and image to work on. This can be done in a few ways.
+Before running any other command you must *load* or *create* an image to work on. This can be done in a few ways.
 1. Click "Load Image from File" and select an image file to load (supported formats are JPG and PNG)
 2. Click the "Create" menu at the top and select one of our image generators to create an image from scratch
 3. Use the Script Input Box to execute a Load command (for details on batch script format see Noninteractive Mode section)
@@ -103,7 +103,7 @@ The controller is accessed through two interfaces: ImageController and Features.
 
 ### Model Design
 <img align="left" src="Model.JPG" width="2000px" alt="picture">
-The ImageModel provides a top level interface that unifies all other parts of the model. The ModelFacade implements this interface by composing an Image object and an ImageEffect object. One Image and one ImageEffect at a time can be loaded into the model. The model can then apply the effect, which updates its stored Image with the output of the running the ImageEffect on its stored Image. The model also keeps two stacks of past and subsequent images (stored as int arrays) to allow perform and undo and redo feature. (This was implemented in the model so that future versions could implement a more performant undo and redo that takes advantage of the specifics of the effect algorithms to avoid saving recreatable data). The Image and ImageEffect interfaces are implemented by a number of concrete class following a command design pattern to facilitate extensibility.
+The ImageModel provides a top level interface that unifies all other parts of the model. The ModelFacade implements this interface by composing an Image object and an ImageEffect object. One Image and one ImageEffect at a time can be loaded into the model. The model can then apply the effect, which updates its stored Image with the output of running the ImageEffect on its stored Image. The model also keeps two stacks of past and subsequent images (stored as int arrays) to allow an undo and redo feature. (This was implemented in the model so that future versions could implement a more performant undo and redo that takes advantage of the specifics of the effect algorithms to avoid saving recreatable data). The Image and ImageEffect interfaces are implemented by a number of concrete classes following a command design pattern to facilitate extensibility.
 
 
 **Images and ImageEffects both follow a similar pattern: 
@@ -116,7 +116,7 @@ The interfaces provide a common way to access objects**
 immutable and data is extensively validated on construction.**
 
 (Implementing Image)
-- RGBArray {an image constructed with a multi dimensional int array
+- RGBArray {an image constructed with a multi dimensional int array}
 
 (Implementing ImageEffect)
 - Filter {a kernel convolver that takes any kernel}
